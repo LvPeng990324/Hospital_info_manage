@@ -451,7 +451,7 @@ def show_make_prescription(request, sicker_id):
     return render(request, 'make_prescription.html', context=context)
 
 
-# 添加药品方法
+# 处方添加药品方法
 def add_medicine_to_prescription(request):
     sicker_id = request.POST.get('sicker_id')
     medicine_name = request.POST.get('medicine_name')
@@ -640,6 +640,32 @@ def change_medicine_remain_num(request):
         return redirect('show_user')
     else:
         redirect('show_user')
+
+
+# 增加药品方法
+def add_medicine(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        category = request.POST.get('category')
+        price = request.POST.get('price')
+        remain_num = request.POST.get('remain_num')
+        introduction = request.POST.get('introduction')
+        # 存入数据库
+        Medicine.objects.create(
+            name=name,
+            category=category,
+            price=price,
+            remain_number=remain_num,
+            introduction=introduction,
+        )
+        # 重载页面
+        return redirect('show_user')
+    else:
+        # 打包所有药品分类
+        context = {
+            'category_list': MedicineCategory.objects.all(),
+        }
+        return render(request, 'add_medicine.html', context=context)
 
 
 # 科室管理员登录
