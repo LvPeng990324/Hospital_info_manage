@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Website Title -->
+    <title>个人信息更改</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+    <link href="{% static 'form/css/fontawesome-all.css' %}" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/Swiper/4.4.6/css/swiper.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet">
+	<link href="{% static 'form/css/styles.css' %}" rel="stylesheet">
+
+	<!-- Favicon  -->
+    <link rel="icon" href="{% static 'form/images/favicon.png' %}">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"><br>加</div>
+            <div class="bounce2"><br>载</div>
+            <div class="bounce3"><br>中</div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="{% url 'index' %}"><img src="{% static 'form/images/hospital.svg' %}" alt="alternative"></a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+            <!-- end of mobile menu toggle button -->
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{% url 'index' %}">首页 <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="{% url 'login' %}">登录</a>
+                </span>
+            </div>
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header id="header" class="ex-2-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>信息修改</h1>
+                   <p>如忘记当前密码，请联系医院工作人员</p>
+                    <!-- 信息修改表格 -->
+                    <div class="form-container">
+                        <form action="{% url 'change_sicker_information' %}" method="post" data-focus="false">
+                            {% csrf_token %}
+                            <input hidden name="sicker_id" value="{{ sicker_id }}">
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="id_name" name="name" value="{{ name }}" required>
+                                <label class="label-control" for="id_name">姓名</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" id="id_gender" name="gender" required>
+                                    <option value="{{ gender }}">{{ gender }}</option>
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="id_phone" name="phone" value="{{ phone }}" required>
+                                <label class="label-control" for="id_phone">手机号</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="id_home_location" name="home_location" value="{{ home_location }}" required>
+                                <label class="label-control" for="id_home_location">家庭住址</label>
+                                <div class="help-block with-errors"></div>
+                            <div class="form-group">
+                                <input type="password" class="form-control-input" id="id_password" name="password" required>
+                                <label class="label-control" for="id_password">密码</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            </div>
+                            <p class="text-info">无需修改密码请不要填写</p>
+                            <div class="form-group">
+                                <input type="password" class="form-control-input" id="id_new_password" name="new_password">
+                                <label class="label-control" for="id_new_password">新密码</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control-input" id="id_password_again" name="password_again">
+                                <label class="label-control" for="id_password_again">确认密码</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control-submit-button">确认修改</button>
+                            </div>
+                            <div class="form-message">
+                                <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                            </div>
+                        </form>
+                    </div> <!-- 信息修改表格结束 -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="https://cdn.bootcss.com/popper.js/1.15.0/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="{% static 'form/js/jquery.easing.min.js' %}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="https://cdn.bootcss.com/Swiper/4.4.6/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="https://cdn.bootcss.com/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="{% static 'form/js/validator.min.js' %}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="{% static 'form/js/scripts.js' %}"></script> <!-- Custom scripts -->
+</body>
+</html>

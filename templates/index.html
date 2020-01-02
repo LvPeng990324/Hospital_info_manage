@@ -1,0 +1,661 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>首页</title>
+
+<!-- MAIN CSS FILES===================================
+======================================================= -->
+<!-- Bootstrap Core CSS -->
+<link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<!-- Animation -->
+<link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="{% static 'index/css/theme.css' %}" rel="stylesheet">
+<!-- Responsive styles-->
+<link rel="stylesheet" href="{% static 'index/css/responsive.css' %}">
+<!-- FontAwesome -->
+<link rel="stylesheet" href="{% static 'index/css/font-awesome.min.css' %}">
+ <!-- icon moon -->
+<link rel="stylesheet" href="{% static 'index/css/icon-moon.css' %}">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" >
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12 ">
+				<div class="main-nav">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+						<a class="navbar-brand page-scroll" href="#page-top">
+							<i class="icon-aid-kit"></i>Medicure
+						</a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse  navbar-main-collapse">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#section-slider"  >首页</a></li>
+							<li><a class="page-scroll" href="#section-feature" >特色</a></li>
+							<li><a class="page-scroll" href="#section-service"  >案例</a></li>
+							<li><a class="page-scroll" href="#section-team" >团队</a></li>
+							<li><a class="page-scroll" href="{% url 'login' %}"  >登录</a></li>
+						</ul>
+						<div class="contact-no navbar-right visible-md visible-lg">
+							<i class="fa fa-phone"></i> 234-13456789
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container -->
+</nav>
+<!-- navbar end -->
+
+<!-- section slider start -->
+<div id="section-slider">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="carousel slide" id="slider-carousel">
+					<div class="carousel-inner">
+						<div class="item active">
+							<div class="slider-caption ">
+								<h2 class="big-title wow slideInLeft">we take care of your health</h2>
+								<p class="wow slideInRight">Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim, faucibus egestas scelerisque.</p>
+								<a href="#" class="btn btn-primary white">learn more</a>
+							</div>
+						</div> <!-- item end -->
+						<div class="item ">
+							<div class="slider-caption ">
+								<h2 class="big-title wow slideInLeft">we care with great mind</h2>
+								<p class="wow slideInRight">Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim, faucibus egestas scelerisque.</p>
+								<a href="#" class="btn btn-primary white">learn more</a>
+							</div>
+						</div> <!-- item end -->
+						<div class="item">
+							<div class="slider-caption ">
+								<h2 class="big-title wow slideInLeft">we make you feel comfortable </h2>
+								<p class="wow slideInRight">Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim, faucibus egestas scelerisque.</p>
+								<a href="#" class="btn btn-primary white">learn more</a>
+							</div>
+						</div> <!-- item end -->
+					</div>
+					<!-- Controls -->
+					  <a class="left carousel-control" href="#slider-carousel" role="button" data-slide="prev">
+						<i class="fa  fa-long-arrow-left " aria-hidden="true"></i>
+						<span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#slider-carousel" role="button" data-slide="next">
+						<i class="fa  fa-long-arrow-right " aria-hidden="true"></i>
+						<span class="sr-only">Next</span>
+					  </a>
+				</div> <!-- carousel slider wrapper -->
+			</div>
+		</div><!-- row end -->
+	</div> <!-- container end -->
+</div>
+<!-- section slider end -->
+
+<!-- section about us start -->
+<section id="section-about">
+	<div class="container">
+		<div class="about-wrapper">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 wow slideInLeft">
+					<div class="about-inner">
+						<h4> <i class="icon-bullhorn"></i> affordable service </h4>
+						<p>Voluptates veniam, iure reprehenderit, quas eveniet rem recusandae dolores.</p>
+					</div>
+				</div> <!-- col end -->
+				<div class="col-md-4 col-sm-4 wow slideInRight">
+					<div class="about-inner">
+						<h4> <i class="icon-clock"></i>24/7 hours great care </h4>
+						<p>Voluptates veniam, iure reprehenderit, quas eveniet rem recusandae dolores.</p>
+					</div>
+				</div> <!-- col end -->
+				
+				<div class="col-md-4 col-sm-4 wow slideInDown">
+					<div class="top-contact">
+						 <form role="form" id="contactForm" data-toggle="validator" class="shake" >
+							<h4>make a quick connection</h4>
+							<p>Deserunt omnis tempore enim placeat voluptatibus, similique illum .</p>
+
+							<div class="form-group">
+								<input type="text" id="name" name="name" class="form-control" placeholder="your name" required data-error="NEW ERROR MESSAGE">
+								<div class="help-block with-errors"></div>
+							</div>
+							<div class="form-group">
+								<input type="email" name="email" id="email" class="form-control" placeholder="your email" required>
+								<div class="help-block with-errors"></div>
+							</div>
+							 <button class="btn btn-primary white" id="form-submit" type="submit" value="Submit">submit now</button>
+							 <div id="msgSubmit" class="h3 text-center hidden"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div> <!-- row end -->
+	</div> <!-- container end -->
+</section>
+<!-- section about us end -->
+
+<!-- section feature start -->
+<section id="section-feature">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 wow slideInDown">
+				<div class="section-heading text-center">
+					<h2>why we are different</h2>
+					<p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim, faucibus egestas scelerisque.</p>
+				</div>
+			</div>
+		</div> <!-- row end -->
+		<div class="row">
+			<div class="col-md-7 ">
+				<div class="feature-inner">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 wow slideInDown" data-wow-delay=".2s">
+							<div class="feature-box">
+								<i class="icon-trophy"></i> 
+								<h4>Award Winning Care</h4>
+								<p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio.</p>
+							</div>
+						</div> <!-- col-end  -->
+						<div class="col-md-6 col-sm-6  wow slideInDown" data-wow-delay=".4s">
+							<div class="feature-box">
+								<i class="icon-aid-kit"></i> 
+								<h4>Total Provider Access</h4>
+								<p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio.</p>
+							</div>
+						</div> <!-- col-end  -->
+						<div class="col-md-6 col-sm-6  wow slideInDown" data-wow-delay=".6s">
+							<div class="feature-box">
+								<i class="icon-road"></i> 
+								<h4>Convenient Location</h4>
+								<p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio.</p>
+							</div>
+						</div> <!-- col-end  -->
+						<div class="col-md-6 col-sm-6  wow slideInDown" data-wow-delay=".8s">
+							<div class="feature-box">
+								<i class="icon-lab"></i> 
+								<h4>Latest Technology</h4>
+								<p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio.</p>
+							</div>
+						</div> <!-- col-end  -->
+					</div>
+				</div>
+			</div> <!-- col end -->
+			<div class="col-md-5 feature-slide col-sm-12 visible-md visible-lg wow slideInRight">
+				<div class="carousel slide" id="feature-slide" data-ride="carousel">
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="{% static 'index/images/about/about1.jpg' %}" alt="feature-img1">
+						</div> <!-- item end -->
+						<div class="item">
+							<img src="{% static 'index/images/about/about2.jpg' %}" alt="feature-img2">
+						</div> <!-- item end -->
+						<div class="item">
+							<img src="{% static 'index/images/about/about1.jpg' %}" alt="feature-img3">
+						</div> <!-- item end -->
+					</div>
+				</div>
+			</div> <!-- col end -->
+		</div> <!-- row end -->
+	</div> <!-- container end -->
+</section>
+<!-- section feature end -->
+
+<!-- section service start -->
+<section id="section-service">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 wow fadeIn">
+				<div class="section-heading text-center">
+					<h2>our top services</h2>
+					<p>Mauris rhoncus pretium porttitor. Cras scelerisque commodo odio. Phasellus dolor enim, faucibus egestas scelerisque.</p>
+				</div>
+			</div>
+		</div> <!-- row end -->
+
+		<div class="row">
+			<div class="col-md-3 col-sm-4 wow fadeInLeft">
+				 <ul class="nav nav-tabs nav-stacked" role="tablist" id="service-tab-wrapper">
+					<li role="presentation" class="active">
+						<a href="#tab_a" class="animated fadeIn"  role="tab" data-toggle="tab">Neurology</a>
+					</li>
+					<li role="presentation">
+						<a href="#tab_b" class="animated fadeIn" role="tab" data-toggle="tab">Dental Care</a>
+					</li>
+					<li role="presentation">
+						<a href="#tab_c" class="animated fadeIn" role="tab" data-toggle="tab">Cardiology</a>
+					</li>
+					<li role="presentation">
+						<a href="#tab_d" class="animated fadeIn"  role="tab" data-toggle="tab">Eye Care</a>
+					</li>
+					<li role="presentation">
+						<a href="#tab_e" class="animated fadeIn"  role="tab" data-toggle="tab">Kidney sergery</a>
+					</li>
+					<li role="presentation">
+						<a href="#tab_f" class="animated fadeIn"  role="tab" data-toggle="tab"> Heart care</a>
+					</li>
+				  </ul>
+			</div> <!-- col end -->
+			<div class="col-md-9 col-sm-8 wow fadeInRight">
+				<div class="tab-content" id="service-tab-content">
+					<div role="tabpanel" class="tab-pane active animated fadeIn" id="tab_a">
+						<div class="row">
+							<div class="col-md-5 col-sm-12">
+								<div class="service-img">
+									<img src="{% static 'index/images/about/about1.jpg' %}" alt="feature-img3">
+								</div>
+							</div>
+						
+							<div class="col-md-7 col-sm-12">
+								<div class="service-desc">
+									<h4>Neurology</h4>
+									<p>Pellentesque turpis felis, dignissim sit amet sagittis ac, elemen augue. Aliquam vitae enim risus, at laoreet metus.elemen siquam elementum quisaugue.</p>
+									<ul class="service-tab-info">
+										<li>Qualified Staff of Doctors</li>
+										<li>Save your Money and Time</li>
+										<li>24x7 Emergency Services</li>
+										<li>Easy &amp; Affordable Billing</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div> <!-- tabpanel end -->
+					
+					 <div role="tabpanel" class="tab-pane animated fadeIn" id="tab_b">
+						<div class="row">
+							<div class="col-md-5 col-sm-12">
+								<div class="service-img">
+									<img src="{% static 'index/images/about/about2.jpg' %}" alt="feature-img3">
+								</div>
+							</div>
+						
+							<div class="col-md-7 col-sm-12">
+								<div class="service-desc">
+									<h4>Dental care</h4>
+									<p>Pellentesque turpis felis, dignissim sit amet sagittis ac, elemen augue. Aliquam vitae enim risus, at laoreet metus.elemen siquam elementum quisaugue.</p>
+									<ul class="service-tab-info">
+										<li>Qualified Staff of Doctors</li>
+										<li>Save your Money and Time</li>
+										<li>24x7 Emergency Services</li>
+										<li>Easy &amp; Affordable Billing</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div> <!-- tabpanel end -->
+
+					 <div role="tabpanel" class="tab-pane animated fadeIn" id="tab_c">
+						<div class="row">
+							<div class="col-md-5 col-sm-12">
+								<div class="service-img">
+									<img src="{% static 'index/images/about/about3.jpg' %}" alt="feature-img3">
+								</div>
+							</div>
+						
+							<div class="col-md-7 col-sm-12">
+								<div class="service-desc">
+									<h4>Cardology</h4>
+									<p>Pellentesque turpis felis, dignissim sit amet sagittis ac, elemen augue. Aliquam vitae enim risus, at laoreet metus.elemen siquam elementum quisaugue.</p>
+									<ul class="service-tab-info">
+										<li>Qualified Staff of Doctors</li>
+										<li>Save your Money and Time</li>
+										<li>24x7 Emergency Services</li>
+										<li>Easy &amp; Affordable Billing</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div> <!-- tabpanel end -->
+
+					 <div role="tabpanel" class="tab-pane animated fadeIn" id="tab_d">
+						<div class="row">
+							<div class="col-md-5 col-sm-12">
+								<div class="service-img">
+									<img src="{% static 'index/images/about/about4.jpg' %}" alt="feature-img3">
+								</div>
+							</div>
+						
+							<div class="col-md-7 col-sm-12">
+								<div class="service-desc">
+									<h4>eye care</h4>
+									<p>Pellentesque turpis felis, dignissim sit amet sagittis ac, elemen augue. Aliquam vitae enim risus, at laoreet metus.elemen siquam elementum quisaugue.</p>
+									<ul class="service-tab-info">
+										<li>Qualified Staff of Doctors</li>
+										<li>Save your Money and Time</li>
+										<li>24x7 Emergency Services</li>
+										<li>Easy &amp; Affordable Billing</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div><!-- tabpanel end -->
+
+					 <div role="tabpanel" class="tab-pane animated fadeIn" id="tab_e">
+						<div class="row">
+							<div class="col-md-5 col-sm-12">
+								<div class="service-img">
+									<img src="{% static 'index/images/about/about5.jpg' %}" alt="feature-img3">
+								</div>
+							</div>
+						
+							<div class="col-md-7 col-sm-12">
+								<div class="service-desc">
+									<h4>Kidney sergery</h4>
+									<p>Pellentesque turpis felis, dignissim sit amet sagittis ac, elemen augue. Aliquam vitae enim risus, at laoreet metus.elemen siquam elementum quisaugue.</p>
+									<ul class="service-tab-info">
+										<li>Qualified Staff of Doctors</li>
+										<li>Save your Money and Time</li>
+										<li>24x7 Emergency Services</li>
+										<li>Easy &amp; Affordable Billing</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div> <!-- tabpanel end -->
+
+					 <div role="tabpanel" class="tab-pane animated fadeIn" id="tab_f">
+						<div class="row">
+							<div class="col-md-5 col-sm-12">
+								<div class="service-img">
+									<img src="{% static 'index/images/about/about6.jpg' %}" alt="feature-img3">
+								</div>
+							</div>
+						
+							<div class="col-md-7 col-sm-12">
+								<div class="service-desc">
+									<h4>Heart care</h4>
+									<p>Pellentesque turpis felis, dignissim sit amet sagittis ac, elemen augue. Aliquam vitae enim risus, at laoreet metus.elemen siquam elementum quisaugue.</p>
+									<ul class="service-tab-info">
+										<li>Qualified Staff of Doctors</li>
+										<li>Save your Money and Time</li>
+										<li>24x7 Emergency Services</li>
+										<li>Easy &amp; Affordable Billing</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- col end -->
+		</div> <!-- row end -->
+	</div> <!-- container end -->
+</section>
+<!-- section service end -->
+
+<!-- our team start -->
+<section id="section-team" >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 wow slideInLeft">
+				<div class="section-heading text-left">
+					<h2 class="sub-sec-title">Our specialists doctors</h2>
+					<div class="line"></div>
+				</div>
+				<!-- Controls -->
+					<div class="team-control">
+					  <a class="left carousel-control" href="#team-carousel" role="button" data-slide="prev">
+						<i class="fa  fa-long-arrow-left " aria-hidden="true"></i>
+						<span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#team-carousel" role="button" data-slide="next">
+						<i class="fa  fa-long-arrow-right " aria-hidden="true"></i>
+						<span class="sr-only">Next</span>
+					  </a>
+				</div>
+			</div>
+		</div> <!-- row end -->
+			<div class="row">
+				<div class="carousel slide " id="team-carousel">
+					<div class="carousel-inner">
+						<div class="item active">
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a1.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a2.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".4s" >
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a3.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a4.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+						</div> <!-- item end -->
+
+						<div class="item ">
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a1.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a2.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a3.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a4.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+						</div> <!-- item end -->
+
+						<div class="item ">
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a1.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a2.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a3.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+								<div class="team-box">
+									<img src="{% static 'index/images/team/a4.jpg' %}" alt="">
+									<div class="team-desc">
+										<h4>nuton serton</h4>
+										<p>cardiolgy specialist</p>
+										<a href="#"><i class="fa fa-phone"></i> +453-24354546</a>
+									</div>
+								</div>
+							</div>
+						</div> <!-- item end -->
+					</div>
+				</div>	<!-- carousle slide -->
+		</div> <!-- row end -->
+	</div> <!-- container end -->
+</section>
+<!-- our team end -->
+
+<!-- section textimonial start -->
+<section id="section-quote">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="quote-desc text-center">
+					<h2 class="wow fadeInDown">We are a team of young professionals passionate in our work.</h2>
+					<p class="wow slideInLeft">Duis autem vel eum iriure dolor in hendrerit n vuew lputate velit esse molestie consequat, vel illum dolore eufe ugiat nulla facilisis at vero.</p>
+				</div>
+			</div>
+
+			<div class="col-md-12 text-center wow fadeInUp">
+				<a href="#" class="btn btn-primary feature">Make an apppoinment</a>
+			</div>
+		</div> <!-- row end -->
+	</div> <!-- container end -->
+</section>
+<!-- section textimonial end -->
+
+<!-- section contact start -->
+<section id="section-contact-info">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-sm-3 wow slideInLeft" data-wow-delay="0s">
+				<div class="info-box">
+					<i class="icon-location"></i>
+					<h4>address</h4>
+					<p>1800 Abbot Kinney Blvd. Unit D &amp; E Venice, CA 90291</p>
+				</div>
+			</div> <!-- col end -->
+			<div class="col-md-3 col-sm-3  wow slideInLeft" data-wow-delay=".2s">
+				<div class="info-box">
+					<i class="icon-mobile"></i>
+					<h4>Hotline</h4>
+					<p>+12450-45324535</p>
+				</div>
+			</div> <!-- col end -->
+			<div class="col-md-3 col-sm-3  wow slideInLeft" data-wow-delay=".4s">
+				<div class="info-box">
+					<i class="icon-address-book"></i>
+					<h4>Email contact</h4>
+					<p>meicure@mail.com</p>
+				</div>
+			</div> <!-- col end -->
+			<div class="col-md-3 col-sm-3  wow slideInLeft" data-wow-delay=".6s">
+				<div class="info-box">
+					<i class="icon-bookmark"></i>
+					<h4>Website</h4>
+					<p>www.medicure.com</p>
+				</div>
+			</div> <!-- col end -->
+		</div> <!-- row end -->
+	</div> <!-- container end -->
+</section> 
+<!-- section contact end -->
+
+<!-- section Footer start -->
+<section id="section-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center wow fadeInDown">
+				<div class="footer-desc">
+					<h1 class="footer-logo">medicure</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio dolores ipsam atque ut minus. Temporibus blanditiis fugit quod! Quo assumenda sunt voluptate culpa eveniet alias quasi voluptatem, dicta in ratione.</p>
+</div>
+			</div>
+		</div> <!-- row end -->
+	</div> <!-- container end -->
+</section>
+<!-- section Footer end -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- form validation -->
+<script type="text/javascript" src="{% static 'index/js/validator.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'index/js/form-scripts.js' %}"></script>
+<!-- Plugin JavaScript -->
+<script src="{% static 'index/js/jquery.easing.min.js' %}"></script>
+<!-- Wow Animation -->
+<script type="text/javascript" src="{% static 'index/js/wow.min.js' %}"></script>
+<!-- html5 shiv -->
+<script type="text/javascript" src="{% static 'index/js/html5shiv.js' %}"></script>
+<!-- respond js -->
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="{% static 'index/js/theme.js' %}"></script>
+
+</body>
+</html>
