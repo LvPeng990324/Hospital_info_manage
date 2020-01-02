@@ -29,7 +29,7 @@ urlpatterns = [
     path('doctor_ask_money', views.doctor_ask_money, name='doctor_ask_money'),
     # 医生开药
     path('doctor_make_prescription/', views.doctor_make_prescription, name='doctor_make_prescription'),
-    # 增加药品方法
+    # 处方增加药品方法
     path('add_medicine_to_prescription/', views.add_medicine_to_prescription, name='add_medicine_to_prescription'),
     # 减少药品方法
     path('reduce_medicine_to_prescription/', views.reduce_medicine_to_prescription, name='reduce_medicine_to_prescription'),
@@ -41,6 +41,8 @@ urlpatterns = [
     path('change_medicine_information/', views.change_medicine_information, name='change_medicine_information'),
     # 更改药品库存方法
     path('change_medicine_remain_num/', views.change_medicine_remain_num, name='change_medicine_remain_num'),
+    # 增加药品方法
+    path('add_medicine/', views.add_medicine, name='add_medicine'),
     # 挂号病人方法
     path('make_reception/', views.make_reception, name='make_reception'),
 ]
