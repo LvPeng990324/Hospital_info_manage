@@ -738,8 +738,3 @@ def logout(request):
     request.session.flush()
     # 重定向登录界面
     return redirect('/login/')
-
-
-# 展示测试页面
-def test(request):
-    return redirect('show_user')
