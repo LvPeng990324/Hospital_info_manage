@@ -70,7 +70,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>添加药品</h1>
-                    <!-- 信息修改表格 -->
+                    <!-- 药品信息表格 -->
                     <div class="form-container">
                         <form action="" method="post" data-focus="false">
                             {% csrf_token %}
@@ -78,28 +78,36 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">药品名称</span>
                                 </div>
-                                <input type="text" class="form-control" name="medicine_name" placeholder="药品名称" required>
+                                <input type="text" class="form-control" name="name" placeholder="药品名称" required>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">药品类别</span>
                                 </div>
-                                <select class="form-control" name="medicine_category" required>
+                                <select class="form-control" name="category" required>
                                     <option>---选择药品类别---</option>
-                                    <option value="aaa">aaa</option>
+                                    {% for category in category_list %}
+                                    <option value="{{ category }}">{{ category }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">药品单价</span>
                                 </div>
-                                <input type="number" min="0" class="form-control" name="medicine_name" placeholder="药品单价" required>
+                                <input type="number" min="0" class="form-control" name="price" placeholder="药品单价" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">入库数量</span>
+                                </div>
+                                <input type="number" min="0" class="form-control" name="remain_num" placeholder="入库数量" required>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">药品简介</span>
                                 </div>
-                                <textarea type="text" class="form-control" name="medicine_name" placeholder="药品简介" required></textarea>
+                                <textarea type="text" class="form-control" name="introduction" placeholder="药品简介" required></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="form-control-submit-button">确认修改</button>
@@ -108,7 +116,7 @@
                                 <div id="lmsgSubmit" class="h3 text-center hidden"></div>
                             </div>
                         </form>
-                    </div> <!-- 信息修改表格结束 -->
+                    </div> <!-- 药品信息表格结束 -->
 
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
