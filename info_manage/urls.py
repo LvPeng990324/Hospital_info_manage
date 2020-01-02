@@ -4,6 +4,7 @@ from . import views
 urlpatterns = [
     # 首页
     path('index/', views.index, name='index'),
+    path('', views.index),
     # 登录
     path('login/', views.login, name='login'),
     # 注册
@@ -42,7 +43,4 @@ urlpatterns = [
     path('change_medicine_remain_num/', views.change_medicine_remain_num, name='change_medicine_remain_num'),
     # 挂号病人方法
     path('make_reception/', views.make_reception, name='make_reception'),
-
-    # 测试界面，正式上线删掉
-    path('test/', views.test, name='test'),
 ]
