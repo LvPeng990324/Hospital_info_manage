@@ -689,7 +689,7 @@ def give_prescription_medicine(request):
         # 查询是否未缴费
         # 如果未缴费返回该病人未缴费错误
         if sicker.money_to_pay > 0:
-            return HttpResponse('该病人还有{}元未缴费')
+            return HttpResponse('该病人还有{}元未缴费'.format(sicker.money_to_pay))
         # 将该病人药方转为字典
         sicker_medicine = json.loads(sicker.medicine)
         # 查询这些药品的库存并保存到另一字典中
