@@ -69,7 +69,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>向病人 xx病人 发起缴费</h1>
+                    <h1>向病人 {{ sicker.name }} 发起缴费</h1>
                     <br>
                     <!-- 已开药信息 -->
                     <div class="container table-responsive">
@@ -83,12 +83,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for medicine in medicine_list %}
                                 <tr class="table-info">
-                                    <td>yyy</td>
-                                    <td>ddd</td>
-                                    <td>sss</td>
+                                    <td>{{ medicine.name }}</td>
+                                    <td>{{ medicine.price }}</td>
+                                    <td>{{ medicine.prescription_num }}</td>
                                     <td>zzz</td>
                                 </tr>
+                                {% endfor %}
+
                             </tbody>
                         </table>
                     </div> <!-- 已开药信息终点 -->
