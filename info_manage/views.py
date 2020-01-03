@@ -793,14 +793,14 @@ def make_reception(request):
     if request.method == 'POST':
         doctor_id = request.POST.get('get_doctor_id')
         sicker_id = request.POST.get('sicker_id')
-        # 取出该病人
+        # 取出该病人及医生
         sicker = Sicker.objects.get(sicker_id=sicker_id)
-        # 更新病人的就诊医生编号
+        doctor = Doctor.objects.get(doctor_id=doctor_id)
+        # 更新病人的就诊医生编号以及就诊科室
         sicker.doctor_id = doctor_id
+        sicker.department = doctor.department
         # 保存更改
         sicker.save()
-        # 取出该医生
-        doctor = Doctor.objects.get(doctor_id=doctor_id)
         # 更新该医生的接诊人数
         doctor.sicker_num += 1
         # 保存更改
