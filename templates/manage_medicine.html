@@ -121,6 +121,7 @@
                             </table>
                         </div>
                     </div> <!-- 选择药品终点 -->
+                    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#id_model_give_prescription_medicine">处方开药</button>
                     <a href="{% url 'add_medicine' %}">
                         <button type="button" class="btn btn-warning">增加药品</button>
                     </a>
@@ -158,11 +159,42 @@
           <!-- 模态框底部 -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-          </div><!-- 更改库存模态框结束 -->
-
+          </div>
         </div>
       </div>
-    </div>
+    </div><!-- 更改库存模态框结束 -->
+
+    <!-- 给药方开药模态框 -->
+    <div class="modal fade" id="id_model_give_prescription_medicine">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- 模态框头部 -->
+          <div class="modal-header">
+            <h4 class="modal-title">药方开药</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- 模态框主体 -->
+          <div class="modal-body">
+              <form action="{% url 'give_prescription_medicine' %}" method="get">
+                  {% csrf_token %}
+                  <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="病人编号" id="id_sicker_id" name="sicker_id">
+                      <div class="input-group-append">
+                          <button class="btn btn-success">查询药方</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+
+          <!-- 模态框底部 -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- 给药方开药模态框结束 -->
 
     <!-- Scripts -->
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
