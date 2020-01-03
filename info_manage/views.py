@@ -150,7 +150,7 @@ def login_sicker(request, login_id, password):
     }
     # 如果有就诊医生就将医生信息打包
     if sicker.doctor_id:
-        doctor = Doctor.objects.get()
+        doctor = Doctor.objects.get(doctor_id=sicker.doctor_id)
         context['doctor'] = doctor
     # 引导页面
     return render(request, 'sicker.html', context=context)
