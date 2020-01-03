@@ -683,8 +683,8 @@ def give_prescription_medicine(request):
         sicker.medicine = '{}'
         # 保存更改
         sicker.save()
-        # 返回成功
-        return HttpResponse('success')
+        # 重载管理员页面
+        return redirect('show_user')
     else:
         sicker_id = request.GET.get('sicker_id')
         # 从数据库中取出该病人
