@@ -334,11 +334,8 @@ def doctor_ask_money(request):
         # 根据有无ask_money来判断是动作请求还是结果提交
         if not ask_money:
             # 没有ask_money，是动作请求
-            # 引导ask_money页面并打包病人编号信息到前端
-            context = {
-                'sicker_id': sicker_id,
-                'money_to_pay': Sicker.objects.get(sicker_id=sicker_id).money_to_pay
-            }
+            # 引导ask_money页面并打包病人信息到前端
+            context = get_sicker_medicine_information(sicker_id)
             # 引导页面
             return render(request, 'ask_money.html', context=context)
         # 有ask_money，是结果提交
