@@ -102,8 +102,8 @@
                         <form action="{% url 'doctor_ask_money' %}" method="post">
                             {% csrf_token %}
                             <div class="input-group mb-3">
-                                <input type="number" min="0" class="form-control" placeholder="缴费金额" id="id_ask_money" name="ask_money" value="{{ money_to_pay }}">
-                                <input hidden name="sicker_id" value="{{ sicker_id }}">
+                                <input type="number" min="0" class="form-control" placeholder="缴费金额" id="id_ask_money" name="ask_money" value="{{ sicker.money_to_pay }}">
+                                <input hidden name="sicker_id" value="{{ sicker.sicker_id }}">
                                 <div class="input-group-append">
                                     <button class="btn btn-success">发起缴费</button>
                                 </div>
