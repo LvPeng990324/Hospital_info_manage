@@ -43,6 +43,8 @@ urlpatterns = [
     path('change_medicine_remain_num/', views.change_medicine_remain_num, name='change_medicine_remain_num'),
     # 增加药品方法
     path('add_medicine/', views.add_medicine, name='add_medicine'),
+    # 药品管理员给药房开药
+    path('give_prescription_medicine/', views.give_prescription_medicine, name='give_prescription_medicine'),
     # 挂号病人方法
     path('make_reception/', views.make_reception, name='make_reception'),
 ]
