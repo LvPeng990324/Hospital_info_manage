@@ -9,7 +9,7 @@ class SickerInformation(admin.ModelAdmin):
 
 @admin.register(Doctor)
 class DoctorInformation(admin.ModelAdmin):
-    list_display = ('doctor_id', 'name', 'gender', 'phone', 'department', 'sicker_num')
+    list_display = ('doctor_id', 'name', 'gender', 'phone', 'department', 'sicker_num', 'is_working')
 
 
 @admin.register(Department)
