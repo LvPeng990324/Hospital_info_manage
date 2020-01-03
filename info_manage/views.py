@@ -356,7 +356,6 @@ def doctor_ask_money(request):
 
 # 医生开药
 def doctor_make_prescription(request):
-
     # 用来查询药品的方法
     def search_medicine(request, medicine_name_piece, sicker_id):
         # 从数据库中模糊查询medicine_name_piece
@@ -512,7 +511,7 @@ def reduce_medicine_to_prescription(request):
 # 确认开药
 # 也就是将处方单保存备份
 def save_prescription(request):
-    sicker_id =request.POST.get('sicker_id')
+    sicker_id = request.POST.get('sicker_id')
     doctor_id = request.session.get('user_id')
     # 取出此病人
     sicker = Sicker.objects.get(sicker_id=sicker_id)
@@ -666,6 +665,63 @@ def add_medicine(request):
             'category_list': MedicineCategory.objects.all(),
         }
         return render(request, 'add_medicine.html', context=context)
+
+
+# 药品管理员给药方开药
+def give_prescription_medicine(request):
+    if request.method == 'POST':
+        sicker_id = request.POST.get('sicker_id')
+        # 从数据库中取出该病人的药方并转为字典
+        sicker = Sicker.objects.get(sicker_id=sicker_id)
+        sicker_medicine = json.loads(Sicker.objects.get(sicker_id=sicker_id).medicine)
+        # 遍历病人药方并从库存中减去开的数量
+        for name, num in sicker_medicine.items():
+            temp_medicine = Medicine.objects.get(name=name)
+            temp_medicine.remain_number -= num
+            temp_medicine.save()
+        # 清空该病人的药方
+        sicker.medicine = '{}'
+        # 保存更改
+        sicker.save()
+        # 返回成功
+        return HttpResponse('success')
+    else:
+        sicker_id = request.GET.get('sicker_id')
+        # 从数据库中取出该病人
+        sicker = Sicker.objects.get(sicker_id=sicker_id)
+        # 查询是否未缴费
+        # 如果未缴费返回该病人未缴费错误
+        if sicker.money_to_pay > 0:
+            return HttpResponse('该病人还有{}元未缴费')
+        # 将该病人药方转为字典
+        sicker_medicine = json.loads(sicker.medicine)
+        # 查询这些药品的库存并保存到另一字典中
+        hospital_medicine = {}
+        for medicine in sicker_medicine.keys():
+            hospital_medicine[medicine] = Medicine.objects.get(name=medicine).remain_number
+
+        # 创建药品名称-数量-库存对象
+        class MedicineNum:
+            name = ''
+            sicker_num = 0
+            remain_num = 0
+
+        # 实例化MedicineNum
+        # 建立两个列表存储病人药方药品-数量以及医院库存
+        medicine_list = []
+        for name, sicker_num in sicker_medicine.items():
+            temp_medicine = MedicineNum()
+            temp_medicine.name = name
+            temp_medicine.sicker_num = sicker_num
+            temp_medicine.remain_num = Medicine.objects.get(name=name).remain_number
+            medicine_list.append(temp_medicine)
+        # 打包发送给确认开药界面
+        context = {
+            'sicker_name': sicker.name,
+            'sicker_id': sicker.sicker_id,
+            'medicine_list': medicine_list,
+        }
+        return render(request, 'give_prescription_medicine.html', context=context)
 
 
 # 科室管理员登录
