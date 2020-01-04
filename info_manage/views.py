@@ -35,7 +35,8 @@ def signup(request):
             home_location=home_location,
             password=password,
         )
-        return HttpResponse('success')
+        # 引导登录界面
+        return redirect('login')
 
     else:
         # 先验证session是否有记录
